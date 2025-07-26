@@ -1,0 +1,348 @@
+<php> 
+</php>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nery's FC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000b1c;
+    }
+
+    h1, h2, h3, h4, h5, h6, strong {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    header {
+    background: linear-gradient(270deg, #000b1c, #AD051E, #47476a);
+    background-size: 600% 600%;
+    animation: waveColors 10s ease infinite;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @keyframes waveColors {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+    header img {
+      height: 50px;
+    }
+
+nav {
+  background: linear-gradient(270deg, #000b1c, #AD051E, #47476a);
+  background-size: 600% 600%; 
+  animation: waveColors 10s ease infinite;
+  color: white;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      background-color: #111;
+    }
+
+    .card {
+      flex: 1;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+      margin: 0;
+    }
+    
+ h3 {
+  text-align: center;
+}
+
+
+
+    .quote {
+      color: crimson;
+    }
+
+    footer {
+      background-color: #001;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+.Title {
+  position: relative;
+  top: -15px; 
+  color: white;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+
+
+
+.contacto {
+  background-color: #0b1524; 
+  color: #f5f5f5;
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+}
+
+.contacto h2 {
+  text-align: center;
+  color: crimson; 
+  font-size: 36px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid crimson;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.contenedor {
+  width: 100%;
+  margin: 0;
+}
+
+
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.item {
+  background-color: #12243a; 
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.item h3 {
+  color: crimson;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.item i {
+  margin-right: 8px;
+}
+
+.item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item ul li {
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+
+  <script>
+    function cambiarIdioma(idioma) {
+      const textos = {
+        es: {
+          estadio: "Estadio Nery Arena",
+          contacto: "Contacto",
+          entradas: "Entradas",
+          tv: "Nery TV",
+          partidos: "Partidos",
+          card1: "¡Fuerza para Alex Terrible!",
+          desc1: "Los mejores deseos para su pronta recuperación.",
+          card2: "Alex regresa de EE.UU.",
+          desc2: "Preparado para la nueva temporada.",
+          card3: "Inicio de pretemporada",
+          desc3: "El equipo se prepara con todo.",
+          card4: "La afición nunca falla",
+          desc4: "Gran recibimiento en Nery Arena.",
+          quote: "No solo es un equipo, es nery"
+        },
+        jp: {
+          estadio: "ネリーアリーナスタジアム",
+          contacto: "お問い合わせ",
+          entradas: "チケット",
+          tv: "ネリーTV",
+          partidos: "試合",
+          card1: "アレックス・テリブルに力を！",
+          desc1: "一日も早い回復を願っています。",
+          card2: "アレックス、米国から帰国",
+          desc2: "新シーズンへの準備万端。",
+          card3: "プレシーズン開始",
+          desc3: "チームが全力で準備中。",
+          card4: "ファンはいつも応援",
+          desc4: "ネリーアリーナで大歓迎。",
+          quote: "これはただのチームじゃない、ネリーだ"
+        }
+      };
+
+      const t = idioma === "jp" ? textos.jp : textos.es;
+      document.getElementById("estadio").textContent = t.estadio;
+      document.getElementById("contacto").textContent = t.contacto;
+      document.getElementById("nav-entradas").textContent = t.entradas;
+      document.getElementById("nav-tv").textContent = t.tv;
+      document.getElementById("nav-partidos").textContent = t.partidos;
+      document.getElementById("card1").textContent = t.card1;
+      document.getElementById("desc1").textContent = t.desc1;
+      document.getElementById("card2").textContent = t.card2;
+      document.getElementById("desc2").textContent = t.desc2;
+      document.getElementById("card3").textContent = t.card3;
+      document.getElementById("desc3").textContent = t.desc3;
+      document.getElementById("card4").textContent = t.card4;
+      document.getElementById("desc4").textContent = t.desc4;
+      document.querySelector(".quote").textContent = t.quote;
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div>
+    <img src="data:image/png;base64,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" alt="Logo Nery's FC">
+    <strong class="Title">Nery's FC</strong>
+  </div>
+  <div>
+    <a href="#" id="estadio" style="color:white; margin-right: 1rem;">Estadio Nery Arena</a>
+    <a href="#" id="contacto" style="color:white; margin-right: 1rem;">Contacto</a>
+    <select onchange="cambiarIdioma(this.value)">
+      <option value="es">Español</option>
+      <option value="jp">日本語</option>
+    </select>
+  </div>
+</header>
+
+<nav>
+  <a href="productos.html"> Productos de Nery FC (añadir al carrito)</a> 
+  <a href="entradas.html" id="nav-entradas">Entradas</a>
+  <a href="https://fcbayern.com/fcbayerntv/es" id="nav-tv">Nery TV</a>
+  <a href="https://www.fcbarcelona.es/es/futbol/primer-equipo/calendario" id="nav-partidos">Partidos (para nada un soborno para toj)</a>
+  <a href="https://www.youtube.com/watch?v=MkTljWmqrCg">Video de presentación</a>
+  <a href="https://www.facebook.com/Nerysburger.SV/?locale=es_LA">Ofrecemos tambien rapida comida tambien</a>
+</nav>
+
+<section class="hero">
+  <div class="card" style="background-image: url('https://scontent.fgua9-2.fna.fbcdn.net/v/t39.30808-6/494961196_716530854229923_1970514773615925286_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2lU058b-W-QQ7kNvwHnJRbM&_nc_oc=Admk-pC5UYCAnpetwm64CJw6gEnZm8fRmpVkcZNFEOaMrr4L8Gz8OatuCLyG5477jzBUzP-xefdTqdbe7fSbYnCQ&_nc_zt=23&_nc_ht=scontent.fgua9-2.fna&_nc_gid=iT7vs1AxSJXOfyptql583A&oh=00_AfRhz2rN101bXB4LucZ5Lvltfylxoi-Sq10tnrHHndwA6A&oe=6888B838');">
+    <h3 id="card1">¡Fuerza para Kane por su primer trofeo profesional!</h3>
+    <p id="desc1">Los mejores deseos para el jugador.</p>
+  </div>
+  <div class="card" style="background-image: url('https://townsquare.media/site/366/files/2025/04/attachment-slaughter-to-prevail-2025.jpg?w=780&q=75');">
+    <h3 id="card2">Alex regresa de EE.UU.</h3>
+    <p id="desc2">Preparado para la nueva temporada.</p>
+  </div>
+  <div class="card" style="background-image: url('https://assets.bundesliga.com/contender/2025/5/INT_Club_World_Cup_5Players_to_watch_FCB_16-9.jpg');">
+    <h3 id="card3">Inicio de pretemporada</h3>
+    <p id="desc3">El equipo se prepara con todo.</p>
+  </div>
+  <div class="card" style="background-image: url('https://editorial.uefa.com/resources/0287-195d485a6091-e29ee0d12e6c-1000/munich_previews_-_uefa_euro_2020.jpeg');">
+    <h3 id="card4">La afición nunca falla</h3>
+    <p id="desc4">Gran recibimiento en Nery Arena.</p>
+  </div>
+</section>
+
+<h3 class="quote">No solo es un equipo, es nery</h3>
+
+<hr>
+<hr>
+<hr>
+<hr>
+
+<section class="contacto">
+  <div class="contenedor">
+    <h2>CONTACTO</h2>
+    <div class="contacto-grid">
+      <div class="item">
+        <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
+        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15412.38925956458!2d-91.91480185147951!3d15.042732717961002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858dd5e43a05ecd9%3A0xdb62668edf90b093!2sVolc%C3%A1n%20Tajumulco!5e0!3m2!1ses-419!2sgt!4v1753406157092!5m2!1ses-419!2sgt" width="250" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>Ciudad de Guatemala, Guatemala</p>
+      </div>
+      <div class="item">
+        <h3><i class="fas fa-phone-alt"></i> Teléfonos</h3>
+        <ul>
+          <li>Recepción: +502 2374-1058</li>
+          <li>Atención al Cliente: +502 5512-7634</li>
+          <li>Soporte Técnico: +502 2241-8892</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3><i class="fas fa-envelope"></i> Correo Electrónico</h3>
+        <p>contacto@ejemploweb.com<br>soporte@ejemploweb.com</p>
+      </div>
+      <div class="item">
+        <h3><i class="fas fa-clock"></i> Horario de Atención</h3>
+        <p>
+          Lunes a Viernes: 8:00 a.m. – 5:30 p.m.<br>
+          Sábados: 9:00 a.m. – 1:00 p.m.<br>
+          Domingos y feriados: Cerrado
+        </p>
+      </div>
+      <div class="item">
+        <h3><i class="fas fa-share-alt"></i> Redes Sociales</h3>
+        <ul>
+          <li>Facebook: /EjemploWeb</li>
+          <li>Instagram: @ejemploweb_gt</li>
+          <li>LinkedIn: Ejemplo Web Guatemala</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<footer>
+
+  © 2025 Nery's FC - Todos los derechos reservados.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entradas - Nery's FC</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000b1c;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    header {
+    background: linear-gradient(270deg, #000b1c, #AD051E, #47476a);
+    background-size: 600% 600%;
+    animation: waveColors 10s ease infinite;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @keyframes waveColors {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+    main {
+      padding: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .boton-x {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #d00027;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-x:hover {
+      background-color: #a8001f;
+    }
+
+    .lang-select {
+      background-color: #d00027;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span id="header-text">Entradas / チケットト</span>
+  <select class="lang-select" onchange="cambiarIdioma(this.value)">
+    <option value="es">Español</option>
+    <option value="jp">日本語</option>
+  </select>
+</header>
+
+<main>
+  
+
+  <h2 id="shop-title">Nuestra página de entradas y productos Espesificos y asociados </h2>
+  <a href="https://fcbayern.com/en/tickets" class="boton-x" id="market-button">Ir a nuestro mercado</a>
+  
+  
+  <h2 id="buy-now-title"> <br>  Compra ya!!!</h2>
+</main>
+
+<script>
+  function cambiarIdioma(idioma) {
+    const textos = {
+      es: {
+        header: "Entradas / チケット",
+        
+        shop: "Nuestra página de ropa y productos varios",
+        market: "Ir a nuestro mercado",
+        buy: "Compra ya"
+      },
+      jp: {
+        header: "チケット/ Entradas",
+        
+        shop: "当店のアパレル・グッズページ",
+        market: "マーケットへ",
+        buy: "今すぐ購入"
+      }
+    };
+
+    const t = idioma === "jp" ? textos.jp : textos.es;
+
+    document.getElementById("header-text").textContent = t.header;
+    document.getElementById("intro-text").textContent = t.intro;
+    document.getElementById("shop-title").textContent = t.shop;
+    document.getElementById("market-button").textContent = t.market;
+    document.getElementById("buy-now-title").textContent = t.buy;
+  }
+</script>
+
+</body>
+</html>
